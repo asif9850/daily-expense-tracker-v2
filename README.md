@@ -180,4 +180,4 @@ To update an existing database, run the required SQL migrations separately, as `
   4. **Dashboard Improvements**: Added complete financial snapshot with Active Recurring commitments, Upcoming Bills summary, and an intuitive Budget Health Progress & Alert Bar.
   5. **User Experience**: Clear flash message feedback upon add, edit, delete, mark paid, pause, resume, and generate actions across all modules.
   6. **Security & Production Readiness**: 100% prepared statements verified across all queries, strict CSRF token validation, user isolation, and internal SQL error logging.
-  7. **Release Artifacts**: Fully idempotent database schema (`database/schema.sql`) and complete production export (`database/backup_expense_tracker_v2_v2.0_final_release.sql`).
+  - **Release Artifacts**: Fully idempotent database schema available in `database/schema.sql`. Production database backups are maintained separately from the Git repository.
