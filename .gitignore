@@ -1,0 +1,28 @@
+# Operating System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Temporary and Scratch files
+scratch/
+tmp/
+temp/
+*.log
+
+# Database backups & exports
+database/*.sql
+!database/schema.sql
+!database/seed.sql
+
+# Local configuration overrides
+.env
+config.local.php

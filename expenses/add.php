@@ -1,0 +1,217 @@
+<?php
+
+require_once __DIR__ . "/../includes/db.php";
+require_once __DIR__ . "/../includes/auth.php";
+require_once __DIR__ . "/../includes/functions.php";
+
+require_login();
+
+$page_title = "Add Expense";
+$page_css = ["forms", "expenses"];
+
+$user_id = get_user_id();
+
+$error = "";
+
+$amount = "";
+$category = "";
+$expense_date = date("Y-m-d");
+$description = "";
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $csrf_token = $_POST["csrf_token"] ?? "";
+
+    $amount = trim($_POST["amount"] ?? "");
+    $category = trim($_POST["category"] ?? "");
+    $expense_date = $_POST["expense_date"] ?? "";
+    $description = trim($_POST["description"] ?? "");
+
+    if (!verify_csrf_token($csrf_token)) {
+        $error = "Invalid request.";
+    } elseif ($amount === "" || $category === "" || $expense_date === "") {
+        $error = "Amount, category and date are required.";
+    } elseif (!is_numeric($amount) || (float) $amount <= 0) {
+        $error = "Amount must be greater than 0.";
+    } else {
+        $amount_value = (float) $amount;
+
+        $stmt = mysqli_prepare(
+            $conn,
+            "
+            INSERT INTO expenses
+            (user_id, amount, category, expense_date, description, source_type)
+            VALUES (?, ?, ?, ?, ?, 'manual')
+            "
+        );
+
+        mysqli_stmt_bind_param(
+            $stmt,
+            "idsss",
+            $user_id,
+            $amount_value,
+            $category,
+            $expense_date,
+            $description
+        );
+
+        if (mysqli_stmt_execute($stmt)) {
+            mysqli_stmt_close($stmt);
+            invalidate_notification_sync();
+
+            header("Location: index.php?success=" . urlencode("Expense added successfully."));
+            exit;
+        } else {
+            $error = "Failed to add expense.";
+
+            mysqli_stmt_close($stmt);
+        }
+    }
+}
+
+require_once __DIR__ . "/../includes/header.php";
+
+?>
+
+<div class="form-page">
+
+    <div class="form-card">
+
+        <div class="page-header">
+
+            <div>
+                <h1>Add Expense</h1>
+                <p>Record a new expense.</p>
+            </div>
+
+        </div>
+
+        <?php if ($error !== ""): ?>
+
+            <div class="alert alert-error">
+                <?= htmlspecialchars($error); ?>
+            </div>
+
+        <?php endif; ?>
+
+        <form method="POST">
+
+            <input
+                type="hidden"
+                name="csrf_token"
+                value="<?= htmlspecialchars(csrf_token()); ?>"
+            >
+
+            <div class="form-group">
+
+                <label for="amount">
+                    Amount
+                </label>
+
+                <input
+                    type="number"
+                    id="amount"
+                    name="amount"
+                    step="0.01"
+                    min="0.01"
+                    value="<?= htmlspecialchars($amount); ?>"
+                    required
+                >
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="category">
+                    Category
+                </label>
+
+                <select id="category" name="category" required>
+
+                    <option value="">Select Category</option>
+
+                    <option value="Food" <?= $category === "Food" ? "selected" : ""; ?>>
+                        Food
+                    </option>
+
+                    <option value="Transport" <?= $category === "Transport" ? "selected" : ""; ?>>
+                        Transport
+                    </option>
+
+                    <option value="Shopping" <?= $category === "Shopping" ? "selected" : ""; ?>>
+                        Shopping
+                    </option>
+
+                    <option value="Bills" <?= $category === "Bills" ? "selected" : ""; ?>>
+                        Bills
+                    </option>
+
+                    <option value="Health" <?= $category === "Health" ? "selected" : ""; ?>>
+                        Health
+                    </option>
+
+                    <option value="Education" <?= $category === "Education" ? "selected" : ""; ?>>
+                        Education
+                    </option>
+
+                    <option value="Entertainment" <?= $category === "Entertainment" ? "selected" : ""; ?>>
+                        Entertainment
+                    </option>
+
+                    <option value="Other" <?= $category === "Other" ? "selected" : ""; ?>>
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="expense_date">
+                    Date
+                </label>
+
+                <input
+                    type="date"
+                    id="expense_date"
+                    name="expense_date"
+                    value="<?= htmlspecialchars($expense_date); ?>"
+                    required
+                >
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="description">
+                    Description
+                </label>
+
+                <textarea
+                    id="description"
+                    name="description"
+                    maxlength="255"
+                    rows="3"
+                ><?= htmlspecialchars($description); ?></textarea>
+
+            </div>
+
+            <div class="form-actions">
+
+                <button type="submit" class="btn-primary">
+                    Save Expense
+                </button>
+
+                <a href="index.php" class="btn-secondary">
+                    Cancel
+                </a>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<?php require_once __DIR__ . "/../includes/footer.php"; ?>

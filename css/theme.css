@@ -1,0 +1,871 @@
+/* DAILY EXPENSE TRACKER V2 - COMPREHENSIVE DARK MODE & THEME OVERRIDES */
+
+/* Page Background & Base Text */
+[data-theme="dark"] body {
+    background-color: #0f172a !important;
+    color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .main-content {
+    background-color: transparent !important;
+}
+
+/* Navbar */
+[data-theme="dark"] .navbar {
+    background-color: #1e293b !important;
+    border-bottom: 1px solid #334155 !important;
+}
+
+[data-theme="dark"] .brand {
+    color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .nav-links {
+    background-color: #1e293b !important;
+    border-bottom-color: #334155 !important;
+}
+
+[data-theme="dark"] .nav-links a {
+    color: #94a3b8 !important;
+    border-color: #334155 !important;
+}
+
+[data-theme="dark"] .nav-links a:hover,
+[data-theme="dark"] .nav-links a.active {
+    color: #60a5fa !important;
+}
+
+[data-theme="dark"] .menu-toggle {
+    background-color: #1e293b !important;
+    border-color: #334155 !important;
+    color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .theme-toggle-btn {
+    background-color: #334155 !important;
+    border-color: #475569 !important;
+    color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .nav-bell-link {
+    color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .nav-bell-link:hover,
+[data-theme="dark"] .nav-bell-link.active {
+    color: #60a5fa !important;
+    background-color: rgba(96, 165, 250, 0.15) !important;
+}
+
+[data-theme="dark"] .notification-badge {
+    border-color: #1e293b !important;
+}
+
+[data-theme="dark"] .logout-btn {
+    background: rgba(239, 68, 68, 0.15) !important;
+    border-color: rgba(239, 68, 68, 0.35) !important;
+    color: #f87171 !important;
+}
+
+[data-theme="dark"] .logout-btn:hover {
+    background: #dc2626 !important;
+    border-color: #dc2626 !important;
+    color: #ffffff !important;
+    box-shadow: 0 2px 10px rgba(220, 38, 38, 0.4) !important;
+}
+
+/* Headings and Typography */
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6,
+[data-theme="dark"] strong,
+[data-theme="dark"] b,
+[data-theme="dark"] .summary-card strong,
+[data-theme="dark"] .summary-value,
+[data-theme="dark"] .card-header h2,
+[data-theme="dark"] .dashboard-chart-header h2,
+[data-theme="dark"] .dashboard-trend-info strong,
+[data-theme="dark"] .dashboard-category-info strong,
+[data-theme="dark"] .expense-modal-header h2,
+[data-theme="dark"] .profile-row strong,
+[data-theme="dark"] .expense-summary strong,
+[data-theme="dark"] .upcoming-summary strong,
+[data-theme="dark"] .recurring-summary strong,
+[data-theme="dark"] .budget-summary strong,
+[data-theme="dark"] .budget-value,
+[data-theme="dark"] .recent-expense-info strong {
+    color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] p,
+[data-theme="dark"] span,
+[data-theme="dark"] .summary-card span,
+[data-theme="dark"] .summary-label,
+[data-theme="dark"] .card-header span,
+[data-theme="dark"] .dashboard-chart-header span,
+[data-theme="dark"] .dashboard-trend-info span,
+[data-theme="dark"] .dashboard-category-info span,
+[data-theme="dark"] .dashboard-empty,
+[data-theme="dark"] .profile-row span,
+[data-theme="dark"] .expense-summary span,
+[data-theme="dark"] .upcoming-summary span,
+[data-theme="dark"] .recurring-summary span,
+[data-theme="dark"] .budget-summary span,
+[data-theme="dark"] .budget-label,
+[data-theme="dark"] .auth-subtitle,
+[data-theme="dark"] .page-header p,
+[data-theme="dark"] .form-card .page-header p,
+[data-theme="dark"] .dashboard-header p,
+[data-theme="dark"] .date-filter-group label,
+[data-theme="dark"] label {
+    color: #94a3b8 !important;
+}
+
+/* All Cards, Charts, Modals & Containers Across Every Page (Dark Theme) */
+[data-theme="dark"] .summary-card,
+[data-theme="dark"] .dashboard-card,
+[data-theme="dark"] .dashboard-chart,
+[data-theme="dark"] .recent-card,
+[data-theme="dark"] .chart-card,
+[data-theme="dark"] .recent-expenses-card,
+[data-theme="dark"] .auth-card,
+[data-theme="dark"] .form-card,
+[data-theme="dark"] .profile-card,
+[data-theme="dark"] .expense-summary,
+[data-theme="dark"] .expense-filters,
+[data-theme="dark"] .expense-table-container,
+[data-theme="dark"] .expense-table-wrapper,
+[data-theme="dark"] .upcoming-summary,
+[data-theme="dark"] .upcoming-filters,
+[data-theme="dark"] .upcoming-table-container,
+[data-theme="dark"] .upcoming-table-wrapper,
+[data-theme="dark"] .upcoming-card,
+[data-theme="dark"] .recurring-summary,
+[data-theme="dark"] .recurring-filters,
+[data-theme="dark"] .recurring-table-container,
+[data-theme="dark"] .recurring-table-wrapper,
+[data-theme="dark"] .recurring-card,
+[data-theme="dark"] .budget-card,
+[data-theme="dark"] .budget-toolbar,
+[data-theme="dark"] .budget-progress-panel,
+[data-theme="dark"] .no-budget-card,
+[data-theme="dark"] .budget-overview-card,
+[data-theme="dark"] .budget-progress-card,
+[data-theme="dark"] .expense-filter-panel,
+[data-theme="dark"] .modal-content,
+[data-theme="dark"] .expense-modal-content,
+[data-theme="dark"] .preferences-card,
+[data-theme="dark"] .analytics-card,
+[data-theme="dark"] .trend-card,
+[data-theme="dark"] .stat-card,
+[data-theme="dark"] .chart-container,
+[data-theme="dark"] .dashboard-budget-bar-card,
+[data-theme="dark"] .notification-card {
+    background-color: #1e293b !important;
+    border: 1px solid #334155 !important;
+    color: #f1f5f9 !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-theme="dark"] .dashboard-budget-bar-track {
+    background-color: #334155 !important;
+}
+
+/* Modals & Dialogs */
+[data-theme="dark"] .expense-modal,
+[data-theme="dark"] .modal-backdrop {
+    background-color: rgba(15, 23, 42, 0.75) !important;
+}
+
+[data-theme="dark"] .expense-modal-content {
+    background-color: #1e293b !important;
+    border: 1px solid #334155 !important;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-theme="dark"] .expense-modal-header,
+[data-theme="dark"] .modal-header,
+[data-theme="dark"] .modal-footer {
+    border-color: #334155 !important;
+}
+
+[data-theme="dark"] .expense-modal-close,
+[data-theme="dark"] .close-modal,
+[data-theme="dark"] .close-modal-btn {
+    color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .expense-modal-close:hover,
+[data-theme="dark"] .close-modal:hover,
+[data-theme="dark"] .close-modal-btn:hover {
+    color: #f1f5f9 !important;
+}
+
+/* Progress Bars & Trend Tracks */
+[data-theme="dark"] .dashboard-trend-bar,
+[data-theme="dark"] .dashboard-category-bar,
+[data-theme="dark"] .trend-bar,
+[data-theme="dark"] .category-bar,
+[data-theme="dark"] .progress-bar,
+[data-theme="dark"] .progress-track,
+[data-theme="dark"] .budget-progress-bar-bg {
+    background-color: #334155 !important;
+}
+
+[data-theme="dark"] .dashboard-trend-fill,
+[data-theme="dark"] .dashboard-category-fill,
+[data-theme="dark"] .trend-bar-fill,
+[data-theme="dark"] .category-bar-fill,
+[data-theme="dark"] .progress-fill {
+    background-color: #2563eb;
+}
+
+[data-theme="dark"] .progress-fill.fill-success {
+    background-color: #10b981 !important;
+}
+
+[data-theme="dark"] .progress-fill.fill-warning {
+    background-color: #f59e0b !important;
+}
+
+[data-theme="dark"] .progress-fill.fill-danger {
+    background-color: #ef4444 !important;
+}
+
+/* Form Inputs, Selects, and Textareas */
+[data-theme="dark"] input[type="text"],
+[data-theme="dark"] input[type="email"],
+[data-theme="dark"] input[type="password"],
+[data-theme="dark"] input[type="number"],
+[data-theme="dark"] input[type="date"],
+[data-theme="dark"] input[type="month"],
+[data-theme="dark"] select,
+[data-theme="dark"] textarea,
+[data-theme="dark"] .form-group input,
+[data-theme="dark"] .form-group select,
+[data-theme="dark"] .form-group textarea,
+[data-theme="dark"] .dashboard-actions select,
+[data-theme="dark"] .filter-input,
+[data-theme="dark"] .filter-select,
+[data-theme="dark"] .search-input,
+[data-theme="dark"] .expense-filters input,
+[data-theme="dark"] .expense-filters select,
+[data-theme="dark"] .budget-controls input {
+    background-color: #0f172a !important;
+    border: 1px solid #475569 !important;
+    color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] input:focus,
+[data-theme="dark"] select:focus,
+[data-theme="dark"] textarea:focus {
+    border-color: #60a5fa !important;
+    outline: none !important;
+    box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.2) !important;
+}
+
+[data-theme="dark"] ::placeholder {
+    color: #64748b !important;
+}
+
+/* Chrome / Safari / Edge Autofill Dark Mode Override */
+[data-theme="dark"] input:-webkit-autofill,
+[data-theme="dark"] input:-webkit-autofill:hover,
+[data-theme="dark"] input:-webkit-autofill:focus,
+[data-theme="dark"] input:-webkit-autofill:active,
+[data-theme="dark"] textarea:-webkit-autofill,
+[data-theme="dark"] textarea:-webkit-autofill:hover,
+[data-theme="dark"] textarea:-webkit-autofill:focus,
+[data-theme="dark"] select:-webkit-autofill,
+[data-theme="dark"] select:-webkit-autofill:hover,
+[data-theme="dark"] select:-webkit-autofill:focus,
+[data-theme="dark"] .auth-card input:-webkit-autofill,
+[data-theme="dark"] .auth-card input:-webkit-autofill:hover,
+[data-theme="dark"] .auth-card input:-webkit-autofill:focus,
+[data-theme="dark"] .auth-card input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px #0f172a inset !important;
+    box-shadow: 0 0 0 1000px #0f172a inset !important;
+    -webkit-text-fill-color: #f1f5f9 !important;
+    caret-color: #f1f5f9 !important;
+    border-color: #475569 !important;
+    transition: background-color 5000s ease-in-out 0s !important;
+}
+
+[data-theme="dark"] .auth-container {
+    background-color: #0b1120 !important;
+}
+
+[data-theme="dark"] .auth-card {
+    background-color: #1e293b !important;
+    border-color: #334155 !important;
+    color: #f1f5f9 !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4) !important;
+}
+
+[data-theme="dark"] .auth-card h1 {
+    color: #f8fafc !important;
+}
+
+[data-theme="dark"] .auth-subtitle {
+    color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .auth-card label {
+    color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .auth-card input {
+    background-color: #0f172a !important;
+    border: 1px solid #475569 !important;
+    color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .auth-card input:focus {
+    border-color: #60a5fa !important;
+    outline: none !important;
+    box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.25) !important;
+}
+
+[data-theme="dark"] .auth-footer {
+    color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .auth-footer a {
+    color: #60a5fa !important;
+}
+
+.clear-filter-btn,
+.filter-btn {
+    height: 42px !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    border-radius: 8px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+}
+
+[data-theme="dark"] .clear-filter-btn {
+    background-color: #1e293b !important;
+    border: 1px solid #475569 !important;
+    color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .clear-filter-btn:hover {
+    background-color: #334155 !important;
+    color: #60a5fa !important;
+    border-color: #60a5fa !important;
+}
+
+[data-theme="dark"] .filter-btn {
+    background-color: #2563eb !important;
+    border: 1px solid #2563eb !important;
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .filter-btn:hover {
+    background-color: #1d4ed8 !important;
+}
+
+/* Tables across all modules */
+[data-theme="dark"] table,
+[data-theme="dark"] .recurring-table,
+[data-theme="dark"] .upcoming-table,
+[data-theme="dark"] .expense-table {
+    color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] th,
+[data-theme="dark"] .recurring-table th,
+[data-theme="dark"] .upcoming-table th,
+[data-theme="dark"] .expense-table th {
+    background-color: #0f172a !important;
+    color: #94a3b8 !important;
+    border-bottom: 1px solid #334155 !important;
+}
+
+[data-theme="dark"] td,
+[data-theme="dark"] .recurring-table td,
+[data-theme="dark"] .upcoming-table td,
+[data-theme="dark"] .expense-table td {
+    border-bottom: 1px solid #334155 !important;
+    color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] tr:hover td {
+    background-color: #233147 !important;
+}
+
+[data-theme="dark"] .recent-expense-row,
+[data-theme="dark"] .profile-row,
+[data-theme="dark"] .list-item {
+    border-bottom: 1px solid #334155 !important;
+}
+
+/* Secondary Buttons & Clear Filters */
+[data-theme="dark"] .btn-secondary,
+[data-theme="dark"] .clear-filter-btn,
+[data-theme="dark"] .expense-modal-actions .btn-secondary {
+    background-color: #334155 !important;
+    border-color: #475569 !important;
+    color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .btn-secondary:hover,
+[data-theme="dark"] .clear-filter-btn:hover,
+[data-theme="dark"] .expense-modal-actions .btn-secondary:hover {
+    background-color: #475569 !important;
+}
+
+/* Links & Accents */
+[data-theme="dark"] .card-header a,
+[data-theme="dark"] .auth-footer a {
+    color: #60a5fa !important;
+}
+
+/* Primary Action Buttons */
+[data-theme="dark"] .btn-primary,
+[data-theme="dark"] .add-expense-btn,
+[data-theme="dark"] .filter-btn,
+[data-theme="dark"] .expense-modal-actions .btn-primary {
+    background-color: #2563eb !important;
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .btn-primary:hover,
+[data-theme="dark"] .add-expense-btn:hover,
+[data-theme="dark"] .filter-btn:hover,
+[data-theme="dark"] .expense-modal-actions .btn-primary:hover {
+    background-color: #1d4ed8 !important;
+}
+
+/* Action Edit & Delete Buttons */
+[data-theme="dark"] .edit-btn {
+    background-color: rgba(96, 165, 250, 0.15) !important;
+    border: 1px solid rgba(96, 165, 250, 0.3) !important;
+    color: #60a5fa !important;
+}
+
+[data-theme="dark"] .delete-btn {
+    background-color: rgba(248, 113, 113, 0.15) !important;
+    border: 1px solid rgba(248, 113, 113, 0.3) !important;
+    color: #f87171 !important;
+}
+
+/* Alerts & Notices */
+[data-theme="dark"] .alert-success {
+    background-color: rgba(74, 222, 128, 0.15) !important;
+    border: 1px solid rgba(74, 222, 128, 0.35) !important;
+    color: #4ade80 !important;
+}
+
+[data-theme="dark"] .alert-error,
+[data-theme="dark"] .form-errors {
+    background-color: rgba(248, 113, 113, 0.15) !important;
+    border: 1px solid rgba(248, 113, 113, 0.35) !important;
+    color: #f87171 !important;
+}
+
+[data-theme="dark"] .alert-warning {
+    background-color: rgba(251, 191, 36, 0.15) !important;
+    border: 1px solid rgba(251, 191, 36, 0.35) !important;
+    color: #fbbf24 !important;
+}
+
+[data-theme="dark"] .alert-info {
+    background-color: rgba(96, 165, 250, 0.15) !important;
+    border: 1px solid rgba(96, 165, 250, 0.35) !important;
+    color: #60a5fa !important;
+}
+
+/* Recurring Module Specific Notices */
+[data-theme="dark"] .recurring-alert {
+    background-color: rgba(251, 191, 36, 0.15) !important;
+    border: 1px solid rgba(251, 191, 36, 0.35) !important;
+    color: #fbbf24 !important;
+}
+
+/* Empty State & Chart Placeholders */
+[data-theme="dark"] .chart-placeholder,
+[data-theme="dark"] .empty-state,
+[data-theme="dark"] .empty-table {
+    border-color: #334155 !important;
+    color: #64748b !important;
+}
+
+/* Footer */
+[data-theme="dark"] .footer {
+    background-color: #1e293b !important;
+    border-top: 1px solid #334155 !important;
+    color: #94a3b8 !important;
+}
+
+/* Notification Center */
+[data-theme="dark"] .notification-card {
+    background-color: #1e293b !important;
+    border-color: #334155 !important;
+}
+
+[data-theme="dark"] .notification-card.is-unread {
+    background-color: #233147 !important;
+    border-color: #60a5fa !important;
+}
+
+[data-theme="dark"] .notif-btn {
+    background-color: #334155 !important;
+    border-color: #475569 !important;
+    color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .notif-btn:hover {
+    background-color: #475569 !important;
+}
+
+[data-theme="dark"] .notif-btn-primary {
+    background-color: rgba(96, 165, 250, 0.2) !important;
+    border-color: rgba(96, 165, 250, 0.4) !important;
+    color: #60a5fa !important;
+}
+
+[data-theme="dark"] .notif-btn-danger {
+    background-color: transparent !important;
+    color: #f87171 !important;
+}
+
+[data-theme="dark"] .notif-btn-danger:hover {
+    background-color: rgba(248, 113, 113, 0.2) !important;
+}
+
+/* Status & Action Badges in Dark Mode */
+[data-theme="dark"] .status-paid {
+    background-color: rgba(16, 185, 129, 0.18) !important;
+    border: 1px solid rgba(16, 185, 129, 0.35) !important;
+    color: #34d399 !important;
+}
+
+[data-theme="dark"] .status-upcoming {
+    background-color: rgba(59, 130, 246, 0.18) !important;
+    border: 1px solid rgba(59, 130, 246, 0.35) !important;
+    color: #60a5fa !important;
+}
+
+[data-theme="dark"] .status-today {
+    background-color: rgba(245, 158, 11, 0.18) !important;
+    border: 1px solid rgba(245, 158, 11, 0.35) !important;
+    color: #fbbf24 !important;
+}
+
+[data-theme="dark"] .status-overdue {
+    background-color: rgba(239, 68, 68, 0.18) !important;
+    border: 1px solid rgba(239, 68, 68, 0.35) !important;
+    color: #f87171 !important;
+}
+
+[data-theme="dark"] .status-active {
+    background-color: rgba(34, 197, 94, 0.18) !important;
+    border: 1px solid rgba(34, 197, 94, 0.35) !important;
+    color: #4ade80 !important;
+}
+
+[data-theme="dark"] .status-paused {
+    background-color: rgba(245, 158, 11, 0.18) !important;
+    border: 1px solid rgba(245, 158, 11, 0.35) !important;
+    color: #fbbf24 !important;
+}
+
+[data-theme="dark"] .status-ended {
+    background-color: #334155 !important;
+    border: 1px solid #475569 !important;
+    color: #94a3b8 !important;
+}
+
+/* Action Buttons in Dark Mode */
+[data-theme="dark"] .paid-btn {
+    background-color: #10b981 !important;
+    border: 1px solid #059669 !important;
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .paid-btn:hover {
+    background-color: #059669 !important;
+}
+
+[data-theme="dark"] .pause-btn {
+    background-color: rgba(245, 158, 11, 0.18) !important;
+    border: 1px solid rgba(245, 158, 11, 0.35) !important;
+    color: #fbbf24 !important;
+}
+
+[data-theme="dark"] .pause-btn:hover {
+    background-color: rgba(245, 158, 11, 0.28) !important;
+}
+
+[data-theme="dark"] .resume-btn {
+    background-color: rgba(16, 185, 129, 0.18) !important;
+    border: 1px solid rgba(16, 185, 129, 0.35) !important;
+    color: #34d399 !important;
+}
+
+[data-theme="dark"] .resume-btn:hover {
+    background-color: rgba(16, 185, 129, 0.28) !important;
+}
+
+[data-theme="dark"] .generate-btn {
+    background-color: rgba(139, 92, 246, 0.18) !important;
+    border: 1px solid rgba(139, 92, 246, 0.35) !important;
+    color: #a78bfa !important;
+}
+
+[data-theme="dark"] .generate-btn:hover {
+    background-color: rgba(139, 92, 246, 0.28) !important;
+}
+
+/* Category Pills & Badges in Dark Mode */
+[data-theme="dark"] .category-pill {
+    background-color: #0f172a !important;
+    border: 1px solid #334155 !important;
+    color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .frequency-badge {
+    background-color: #0f172a !important;
+    border: 1px solid #334155 !important;
+    color: #94a3b8 !important;
+}
+
+/* Mobile Card Layout & Table Text in Dark Mode */
+[data-theme="dark"] .upcoming-table tbody tr.upcoming-item-row,
+[data-theme="dark"] .recurring-table tbody tr.recurring-item-row,
+[data-theme="dark"] .expense-table tbody tr.expense-item-row {
+    background-color: #1e293b !important;
+    border-color: #334155 !important;
+}
+
+[data-theme="dark"] .cell-description .description-text {
+    color: #f8fafc !important;
+}
+
+[data-theme="dark"] .upcoming-amount .amount-value,
+[data-theme="dark"] .amount-cell .amount-value,
+[data-theme="dark"] .expense-amount .amount-value {
+    color: #38bdf8 !important;
+}
+
+[data-theme="dark"] .due-date-val,
+[data-theme="dark"] .next-date-val,
+[data-theme="dark"] .expense-date-val {
+    color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .cell-actions {
+    border-top-color: #334155 !important;
+}
+
+/* Expenses Filter Panel Overrides */
+[data-theme="dark"] .expense-filter-panel {
+    background-color: #1e293b !important;
+    border-color: #334155 !important;
+}
+
+[data-theme="dark"] .filter-panel-header {
+    border-bottom-color: #334155 !important;
+}
+
+[data-theme="dark"] .filter-title {
+    color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .filter-total-badge {
+    background-color: #334155 !important;
+    border-color: #475569 !important;
+}
+
+[data-theme="dark"] .total-badge-label {
+    color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .total-badge-amount {
+    color: #60a5fa !important;
+}
+
+[data-theme="dark"] .active-filter-tag {
+    background-color: rgba(96, 165, 250, 0.15) !important;
+    border-color: rgba(96, 165, 250, 0.3) !important;
+    color: #60a5fa !important;
+}
+
+/* Budget Module Dark Overrides */
+[data-theme="dark"] .budget-toolbar {
+    background-color: #1e293b !important;
+    border-color: #334155 !important;
+}
+
+[data-theme="dark"] .month-nav-btn {
+    background-color: #0f172a !important;
+    border-color: #334155 !important;
+    color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .month-nav-btn:hover {
+    border-color: #60a5fa !important;
+    color: #60a5fa !important;
+    background-color: rgba(96, 165, 250, 0.15) !important;
+}
+
+[data-theme="dark"] .month-picker-wrap input[type="month"] {
+    background-color: #0f172a !important;
+    border-color: #334155 !important;
+    color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .this-month-btn {
+    background-color: rgba(96, 165, 250, 0.15) !important;
+    border-color: rgba(96, 165, 250, 0.3) !important;
+    color: #60a5fa !important;
+}
+
+[data-theme="dark"] .this-month-btn:hover {
+    background-color: #2563eb !important;
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .period-range {
+    color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .budget-card {
+    background-color: #1e293b !important;
+    border-color: #334155 !important;
+}
+
+[data-theme="dark"] .budget-card-header .budget-label {
+    color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .budget-subtext {
+    color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .budget-card-remaining.is-positive .budget-value {
+    color: #4ade80 !important;
+}
+
+[data-theme="dark"] .budget-card-remaining.is-over .budget-value {
+    color: #f87171 !important;
+}
+
+[data-theme="dark"] .budget-progress-panel {
+    background-color: #1e293b !important;
+    border-color: #334155 !important;
+}
+
+[data-theme="dark"] .budget-progress-footer strong {
+    color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .budget-progress-footer strong.text-danger {
+    color: #f87171 !important;
+}
+
+[data-theme="dark"] .budget-action-btn.edit-btn {
+    background-color: rgba(96, 165, 250, 0.15) !important;
+    border-color: rgba(96, 165, 250, 0.35) !important;
+    color: #60a5fa !important;
+}
+
+[data-theme="dark"] .budget-action-btn.edit-btn:hover,
+[data-theme="dark"] .budget-action-btn.edit-btn:focus-visible {
+    background-color: #2563eb !important;
+    color: #ffffff !important;
+    border-color: #2563eb !important;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35) !important;
+}
+
+[data-theme="dark"] .budget-action-btn.edit-btn:hover svg,
+[data-theme="dark"] .budget-action-btn.edit-btn:focus-visible svg {
+    stroke: #ffffff !important;
+}
+
+[data-theme="dark"] .budget-action-btn.delete-btn {
+    background-color: rgba(248, 113, 113, 0.15) !important;
+    border-color: rgba(248, 113, 113, 0.35) !important;
+    color: #f87171 !important;
+}
+
+[data-theme="dark"] .budget-action-btn.delete-btn:hover,
+[data-theme="dark"] .budget-action-btn.delete-btn:focus-visible {
+    background-color: #dc2626 !important;
+    color: #ffffff !important;
+    border-color: #dc2626 !important;
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.35) !important;
+}
+
+[data-theme="dark"] .budget-action-btn.delete-btn:hover svg,
+[data-theme="dark"] .budget-action-btn.delete-btn:focus-visible svg {
+    stroke: #ffffff !important;
+}
+
+/* Custom Select Dark Mode Overrides */
+[data-theme="dark"] .custom-select-trigger {
+    background-color: #0f172a !important;
+    border-color: #334155 !important;
+    color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .custom-select-wrapper.is-active .custom-select-trigger,
+[data-theme="dark"] .custom-select-trigger:focus {
+    border-color: #60a5fa !important;
+    box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.2) !important;
+}
+
+[data-theme="dark"] .custom-select-dropdown {
+    background-color: #1e293b !important;
+    border-color: #334155 !important;
+    box-shadow: 0 10px 20px -3px rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-theme="dark"] .custom-select-option {
+    color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .custom-select-option:hover {
+    background-color: #334155 !important;
+    color: #60a5fa !important;
+}
+
+[data-theme="dark"] .custom-select-option.is-selected {
+    background-color: rgba(96, 165, 250, 0.2) !important;
+    color: #60a5fa !important;
+}
+
+[data-theme="dark"] .custom-select-arrow {
+    color: #94a3b8 !important;
+}
+
+/* Native select & option fallback dark mode */
+[data-theme="dark"] option {
+    background-color: #0f172a !important;
+    color: #f1f5f9 !important;
+}
+
+/* Date input calendar picker dark mode override */
+[data-theme="dark"] input[type="date"] {
+    color-scheme: dark !important;
+    cursor: pointer;
+}
+
+[data-theme="dark"] input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1) brightness(1.2) !important;
+    cursor: pointer;
+    opacity: 0.85;
+}
+
+[data-theme="dark"] input[type="date"]::-webkit-calendar-picker-indicator:hover {
+    opacity: 1;
+    transform: scale(1.15);
+    background: rgba(255, 255, 255, 0.15);
+}

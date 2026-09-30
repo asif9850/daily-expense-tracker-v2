@@ -1,0 +1,711 @@
+/* DAILY EXPENSE TRACKER V2 - MODERN CHARTS STYLES Pure CSS for Donut Charts, Vertical Bar Charts & Interactive Legends */
+
+/* Donut Chart Component (Matching User Mockup) */
+.donut-chart-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 36px;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.donut-chart-container.compact {
+    gap: 20px;
+}
+
+.donut-visual-wrap {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.donut-chart-container.compact .donut-visual-wrap {
+    width: 180px;
+    height: 180px;
+}
+
+.donut-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    transform: rotate(0deg);
+}
+
+.donut-segment {
+    cursor: pointer;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.06));
+}
+
+.donut-segment:hover {
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+}
+
+.donut-center-info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    pointer-events: none;
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.donut-center-amount {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--text-main, #0f172a);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    word-break: break-word;
+    transition: color 0.2s ease;
+}
+
+.donut-chart-container.compact .donut-center-amount {
+    font-size: 16px;
+}
+
+.donut-center-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-muted, #64748b);
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: color 0.2s ease;
+}
+
+.donut-chart-empty {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Donut Chart Legend (Matching Image 4 Mockup) */
+.donut-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+    min-width: 200px;
+    max-width: 380px;
+}
+
+.donut-legend-item {
+    display: flex;
+    align-items: center;
+    padding: 7px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.18s ease, transform 0.18s ease;
+    user-select: none;
+}
+
+.donut-legend-item:hover,
+.donut-legend-item.is-active {
+    background-color: rgba(59, 130, 246, 0.08);
+    transform: translateX(3px);
+}
+
+.legend-color-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-right: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.legend-category-name {
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--text-main, #1e293b);
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.legend-percent {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-muted, #64748b);
+    margin-left: 8px;
+    min-width: 44px;
+    text-align: right;
+}
+
+.legend-amount {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-main, #0f172a);
+    margin-left: 14px;
+    min-width: 80px;
+    text-align: right;
+}
+
+/* Vertical Bar Chart Component (Matching Image 3 Mockup) */
+.barchart-wrapper {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px 4px 0 4px;
+}
+
+.barchart-main-area {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.barchart-grid {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.barchart-grid-row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.barchart-y-label {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-muted, #94a3b8);
+    width: 44px;
+    text-align: right;
+    padding-right: 10px;
+    flex-shrink: 0;
+}
+
+.barchart-grid-line {
+    flex: 1;
+    border-bottom: 1px dashed rgba(148, 163, 184, 0.22);
+}
+
+.barchart-columns {
+    position: absolute;
+    top: 0;
+    bottom: 4px;
+    left: 48px;
+    right: 10px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    gap: 12px;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.barchart-columns.fit-trend-columns {
+    overflow: hidden !important;
+    justify-content: space-around;
+    gap: 4px;
+    width: calc(100% - 58px);
+}
+
+.barchart-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    flex: 1;
+    max-width: 58px;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.barchart-col.trend-col {
+    min-width: 0 !important;
+    max-width: none;
+    flex: 1 1 0;
+}
+
+.barchart-bar-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.barchart-bar-fill {
+    width: 32px;
+    max-width: 85%;
+    border-radius: 6px 6px 1px 1px;
+    transition: height 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.18s ease, filter 0.18s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.barchart-col.trend-col .barchart-bar-fill {
+    width: 100%;
+    max-width: 22px;
+    min-width: 4px;
+    border-radius: 4px 4px 1px 1px;
+}
+
+.barchart-col:hover .barchart-bar-fill,
+.barchart-col.is-active-bar .barchart-bar-fill {
+    transform: scaleX(1.08) translateY(-2px);
+    filter: brightness(1.15);
+}
+
+.barchart-col.is-peak .barchart-bar-fill {
+    box-shadow: 0 0 10px rgba(37, 99, 235, 0.5);
+}
+
+/* X-Axis Static Labels are permanently hidden per user specification */
+.barchart-x-label {
+    display: none !important;
+}
+
+/* Active Bar Information Banner (Appears on Hover or Click/Tap) */
+.barchart-active-display {
+    margin: 14px auto 0 auto;
+    padding: 7px 14px;
+    background: rgba(59, 130, 246, 0.05);
+    border: 1px dashed rgba(59, 130, 246, 0.2);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-muted, #64748b);
+    min-height: 36px;
+    text-align: center;
+    width: fit-content;
+    max-width: 100%;
+    transition: all 0.2s ease;
+}
+
+.barchart-active-display.has-selection {
+    background: rgba(59, 130, 246, 0.12);
+    border-style: solid;
+    border-color: rgba(59, 130, 246, 0.4);
+    color: var(--text-main, #0f172a);
+}
+
+.barchart-active-display .active-guide-text {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12.5px;
+    color: var(--text-muted, #64748b);
+}
+
+.barchart-active-display .active-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.barchart-active-display .active-bar-label {
+    font-weight: 700;
+    color: var(--text-main, #0f172a);
+}
+
+.barchart-active-display .active-bar-val {
+    font-weight: 700;
+    color: #2563eb;
+}
+
+.barchart-active-display .active-bar-pct {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted, #64748b);
+}
+
+.barchart-caption {
+    margin: 10px 0 0 0;
+    text-align: center;
+    font-size: 13px;
+    color: var(--text-muted, #64748b);
+    font-style: normal;
+}
+
+/* Tooltip on Bar Hover */
+.barchart-tooltip {
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    background: #0f172a;
+    color: #ffffff;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 11.5px;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.18s ease, transform 0.18s ease;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.barchart-tooltip strong {
+    font-weight: 600;
+    color: #f8fafc;
+}
+
+.barchart-tooltip span {
+    font-weight: 500;
+    color: #60a5fa;
+}
+
+.barchart-tooltip .peak-badge {
+    color: #fbbf24;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 1px;
+}
+
+.barchart-col:hover .barchart-tooltip,
+.barchart-col.is-active-bar .barchart-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.barchart-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 4px;
+    border-style: solid;
+    border-color: #0f172a transparent transparent transparent;
+}
+
+/* Analytics Navigation Tabs (Matching Mockup 3) */
+.analytics-tab-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 2px solid var(--border-color, #e2e8f0);
+    margin-bottom: 22px;
+    padding-bottom: 0;
+    overflow-x: auto;
+}
+
+.analytics-tab-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 10px 18px;
+    font-size: 14.5px;
+    font-weight: 600;
+    color: var(--text-muted, #64748b);
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-radius: 6px 6px 0 0;
+    white-space: nowrap;
+}
+
+.analytics-tab-btn:hover {
+    color: #2563eb;
+    background-color: rgba(37, 99, 235, 0.04);
+}
+
+.analytics-tab-btn.active {
+    color: #2563eb;
+    border-bottom-color: #2563eb;
+    background-color: rgba(37, 99, 235, 0.08);
+}
+
+.analytics-tab-pane {
+    display: none;
+    animation: chartFadeIn 0.25s ease-out forwards;
+}
+
+.analytics-tab-pane.active {
+    display: block;
+}
+
+@keyframes chartFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Circular Budget Gauge */
+.budget-progress-inner-layout {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.budget-circular-col {
+    flex-shrink: 0;
+}
+
+.budget-progress-details-col {
+    flex: 1;
+    min-width: 0;
+}
+
+@media (max-width: 640px) {
+    .budget-progress-inner-layout {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+    .budget-progress-details-col {
+        width: 100%;
+    }
+}
+
+.budget-gauge-wrap {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.gauge-svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(0deg);
+}
+
+.budget-gauge-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.budget-gauge-pct {
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.budget-gauge-lbl {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-muted, #64748b);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 2px;
+}
+
+/* Comparison Tab Styles */
+.compare-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin-bottom: 22px;
+}
+
+.compare-stat-card {
+    background: var(--bg-card, #ffffff);
+    border: 1px solid var(--border-color, #e2e8f0);
+    border-radius: 10px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.compare-stat-label {
+    font-size: 13px;
+    color: var(--text-muted, #64748b);
+    font-weight: 500;
+}
+
+.compare-stat-value {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-main, #0f172a);
+}
+
+.compare-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 999px;
+    width: fit-content;
+}
+
+.compare-badge.down {
+    background: rgba(16, 185, 129, 0.12);
+    color: #059669;
+}
+
+.compare-badge.up {
+    background: rgba(239, 68, 68, 0.12);
+    color: #dc2626;
+}
+
+.compare-badge.neutral {
+    background: rgba(100, 116, 139, 0.12);
+    color: #64748b;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+    .donut-chart-container {
+        flex-direction: column;
+        gap: 22px;
+    }
+
+    .donut-legend {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .barchart-columns {
+        left: 40px;
+        gap: 8px;
+    }
+
+    .barchart-y-label {
+        width: 36px;
+        padding-right: 6px;
+        font-size: 10px;
+    }
+
+    .barchart-x-label {
+        font-size: 10.5px;
+        max-width: 48px;
+    }
+
+    .barchart-bar-fill {
+        width: 24px;
+    }
+}
+
+/* Dark Mode Overrides */
+[data-theme="dark"] .donut-legend-item:hover,
+[data-theme="dark"] .donut-legend-item.is-active {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+[data-theme="dark"] .legend-category-name,
+[data-theme="dark"] .legend-amount,
+[data-theme="dark"] .donut-center-amount,
+[data-theme="dark"] .compare-stat-value {
+    color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .legend-percent,
+[data-theme="dark"] .donut-center-label,
+[data-theme="dark"] .barchart-y-label,
+[data-theme="dark"] .barchart-x-label,
+[data-theme="dark"] .barchart-caption,
+[data-theme="dark"] .budget-gauge-lbl,
+[data-theme="dark"] .compare-stat-label {
+    color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .barchart-grid-line {
+    border-bottom-color: rgba(148, 163, 184, 0.18) !important;
+}
+
+[data-theme="dark"] .analytics-tab-nav {
+    border-bottom-color: #334155 !important;
+}
+
+[data-theme="dark"] .analytics-tab-btn {
+    color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .analytics-tab-btn:hover {
+    color: #60a5fa !important;
+    background-color: rgba(96, 165, 250, 0.1) !important;
+}
+
+[data-theme="dark"] .analytics-tab-btn.active {
+    color: #60a5fa !important;
+    border-bottom-color: #60a5fa !important;
+    background-color: rgba(96, 165, 250, 0.15) !important;
+}
+
+[data-theme="dark"] .barchart-tooltip {
+    background: #1e293b !important;
+    border: 1px solid #334155 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-theme="dark"] .barchart-tooltip::after {
+    border-color: #1e293b transparent transparent transparent !important;
+}
+
+[data-theme="dark"] .compare-stat-card {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+}
+
+[data-theme="dark"] .barchart-active-display {
+    background: rgba(30, 41, 59, 0.7) !important;
+    border-color: rgba(96, 165, 250, 0.25) !important;
+    color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .barchart-active-display.has-selection {
+    background: rgba(59, 130, 246, 0.18) !important;
+    border-color: #3b82f6 !important;
+    color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .barchart-active-display .active-bar-label {
+    color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .barchart-active-display .active-bar-val {
+    color: #60a5fa !important;
+}

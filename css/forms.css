@@ -1,0 +1,334 @@
+/* Forms */
+
+.auth-container {
+    min-height: calc(100vh - 140px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 420px;
+
+    background: var(--bg-card, #ffffff);
+
+    padding: 28px;
+
+    border: 1px solid var(--border-color, #e5e7eb);
+    border-radius: 12px;
+    color: var(--text-main, #0f172a);
+}
+
+.auth-card h1 {
+    margin-bottom: 6px;
+    font-size: 26px;
+    text-align: center;
+}
+
+.auth-subtitle {
+    margin-bottom: 24px;
+    color: var(--text-muted, #64748b);
+    font-size: 14px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    padding: 10px 12px;
+
+    border: 1px solid var(--border-input, #d1d5db);
+    border-radius: 7px;
+
+    background: var(--bg-input, #ffffff);
+    color: var(--text-main, #0f172a);
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+/* Modern Accessible Date Input & Calendar Picker */
+input[type="date"] {
+    position: relative;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 14px;
+    padding-right: 8px;
+}
+
+[data-theme="dark"] input[type="date"] {
+    color-scheme: dark;
+}
+
+[data-theme="light"] input[type="date"] {
+    color-scheme: light;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    padding: 6px;
+    margin-right: -2px;
+    border-radius: 6px;
+    transition: transform 0.15s ease, opacity 0.15s ease, background 0.15s ease;
+}
+
+[data-theme="dark"] input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1) brightness(1.2);
+    opacity: 0.85;
+}
+
+[data-theme="dark"] input[type="date"]::-webkit-calendar-picker-indicator:hover {
+    opacity: 1;
+    transform: scale(1.15);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+[data-theme="light"] input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0.75;
+}
+
+[data-theme="light"] input[type="date"]::-webkit-calendar-picker-indicator:hover {
+    opacity: 1;
+    transform: scale(1.15);
+    background: rgba(0, 0, 0, 0.07);
+}
+
+.btn-primary {
+    width: 100%;
+
+    padding: 11px 16px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: #2563eb;
+    color: #ffffff;
+
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: #1d4ed8;
+}
+
+.auth-footer {
+    margin-top: 20px;
+
+    text-align: center;
+
+    font-size: 14px;
+    color: var(--text-muted, #64748b);
+}
+
+.auth-footer a {
+    color: var(--color-primary, #2563eb);
+    font-weight: 600;
+}
+
+/* General Form Pages */
+
+.form-page {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.form-card {
+    background: var(--bg-card, #ffffff);
+
+    border: 1px solid var(--border-color, #e5e7eb);
+    border-radius: 10px;
+    color: var(--text-main, #0f172a);
+
+    padding: 24px;
+}
+
+.form-card .page-header {
+    margin-bottom: 20px;
+}
+
+.form-card .page-header h1 {
+    margin-bottom: 4px;
+    font-size: 24px;
+}
+
+.form-card .page-header p {
+    color: var(--text-muted, #64748b);
+    font-size: 14px;
+}
+
+.form-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.btn-secondary {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 11px 16px;
+
+    border: 1px solid var(--border-color, #d1d5db);
+    border-radius: 7px;
+
+    background: var(--bg-card, #ffffff);
+    color: var(--text-main, #444);
+
+    font-weight: 600;
+}
+
+.btn-secondary:hover {
+    background: var(--bg-subtle, #f5f5f5);
+}
+
+.optional-label {
+    font-size: 12px;
+    font-weight: 400;
+    color: #777;
+}
+
+.form-errors {
+    margin-bottom: 18px;
+    padding: 12px 14px;
+    border: 1px solid #fecaca;
+    border-radius: 7px;
+    background: #fef2f2;
+    color: #b91c1c;
+}
+
+.form-errors p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.form-errors p + p {
+    margin-top: 5px;
+}
+
+/* Responsive Forms */
+
+@media (max-width: 600px) {
+    .auth-container {
+        padding: 20px 12px;
+    }
+
+    .auth-card {
+        padding: 20px;
+    }
+
+    .auth-card h1 {
+        font-size: 23px;
+    }
+
+    .form-card {
+        padding: 18px;
+    }
+
+    .form-card .page-header h1 {
+        font-size: 22px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .form-actions .btn-primary,
+    .form-actions .btn-secondary {
+        width: 100%;
+    }
+}
+
+/* Dark Mode & Autofill Overrides for Forms */
+
+[data-theme="dark"] .auth-container {
+    background-color: #0b1120;
+}
+
+[data-theme="dark"] .auth-card {
+    background-color: #1e293b;
+    border-color: #334155;
+    color: #f1f5f9;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .auth-card h1 {
+    color: #f8fafc;
+}
+
+[data-theme="dark"] .auth-subtitle {
+    color: #94a3b8;
+}
+
+[data-theme="dark"] .auth-card label {
+    color: #cbd5e1;
+}
+
+[data-theme="dark"] .auth-card input,
+[data-theme="dark"] .form-card input,
+[data-theme="dark"] .form-card select,
+[data-theme="dark"] .form-card textarea {
+    background-color: #0f172a;
+    border-color: #475569;
+    color: #f1f5f9;
+}
+
+[data-theme="dark"] .auth-card input:focus,
+[data-theme="dark"] .form-card input:focus,
+[data-theme="dark"] .form-card select:focus,
+[data-theme="dark"] .form-card textarea:focus {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.25);
+}
+
+[data-theme="dark"] .auth-footer {
+    color: #94a3b8;
+}
+
+[data-theme="dark"] .auth-footer a {
+    color: #60a5fa;
+}
+
+/* Chrome / Safari / Edge Autofill Fix in Dark Mode */
+[data-theme="dark"] input:-webkit-autofill,
+[data-theme="dark"] input:-webkit-autofill:hover,
+[data-theme="dark"] input:-webkit-autofill:focus,
+[data-theme="dark"] input:-webkit-autofill:active,
+[data-theme="dark"] textarea:-webkit-autofill,
+[data-theme="dark"] select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px #0f172a inset !important;
+    box-shadow: 0 0 0 1000px #0f172a inset !important;
+    -webkit-text-fill-color: #f1f5f9 !important;
+    caret-color: #f1f5f9 !important;
+    border-color: #475569 !important;
+    transition: background-color 5000s ease-in-out 0s !important;
+}
